@@ -23,7 +23,7 @@ export const remainingRouter: any[] = [
       {
         path: 'productview/:id',
         component: () => import('@/views/product/detail.vue'),
-        name: 'ProductIndex',
+        name: 'ProductViewIndex',
         meta: {
           title: '产品详情'
         }

@@ -13,9 +13,9 @@
     <div class="message-box">
       <h1>404</h1>
       <p>抱歉，未找到相关页面……</p>
-      <div class="buttons-con">
+      <div class="buttons-con" @click="router.go(-1)">
         <div class="action-link-wrap">
-          <a href="/" class="link-button link-back-button">返回</a>
+          <a class="link-button link-back-button">返回</a>
         </div>
       </div>
     </div>
@@ -24,6 +24,8 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+
+const router = useRouter()
 
 const props = defineProps({
   theme: { // 主题，light | dark
@@ -82,7 +84,7 @@ const newTheme = ref(props.theme)
   }
 
   .action-link-wrap a {
-    background: #68c950;
+    background: var(--el-color-primary);
     padding: 8px 25px;
     border-radius: 4px;
     color: #FFF;

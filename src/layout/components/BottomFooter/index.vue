@@ -64,6 +64,7 @@
 .contact-wrap {
   height: 260px;
   background-image: url('/imgs/footer/bg.png');
+  background-size: cover;
 }
 
 .contact-container {
@@ -88,7 +89,7 @@
 .company-info {
   width: var(--sys-top-body-width);
   margin: auto;
-  color: var(--el-text-color-regular);
+  color: #4a4c5e;
   padding-top: 60px;
 }
 
@@ -96,7 +97,7 @@
   width: var(--sys-top-body-width);
   margin: auto;
   text-align: center;
-  color: var(--el-text-color-regular);
+  color: #4a4c5e;
   padding: 100px 0;
 }
 </style>
