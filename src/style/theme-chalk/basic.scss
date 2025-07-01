@@ -1,0 +1,39 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+// 原生滚动条
+body {
+  // 宽度
+  & ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  // 滑块
+  & ::-webkit-scrollbar-thumb {
+    // background: var(--cjui-top-header-color);
+    border-radius: 10px;
+  }
+
+  // 轨道
+  // & ::-webkit-scrollbar-track {
+  // }
+}
+
+div {
+  box-sizing: border-box;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  position: relative;
+}

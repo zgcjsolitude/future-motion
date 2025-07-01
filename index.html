@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/imgs/logo.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="keywords" content="xx" /> -->
+    <title>%VITE_APP_TITLE%</title>
+
+    <!-- 全局配置 -->
+    <script>
+      var script = document.createElement('script');
+      script.src = `/config.js?t=${Math.random()}`;
+      document.head.appendChild(script);
+    </script>
+
+    <!-- 浏览器版本检测 -->
+    <style>
+      .browser-warning {
+        width: 100%;
+        height: 100vh;
+        background-color: #f44336;
+        color: #fff;
+        text-align: center;
+        font-size: 40px;
+        padding-top: 20%;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 浏览器版本检测 -->
+    <div id="browser-warning" class="browser-warning"></div>
+    <script>
+      function detectBrower() {
+        var userAgent = navigator.userAgent;
+        var browser = {
+          isChrome: /Chrome/.test(navigator.userAgent) && /Googe Inc/.test(navigator.vendor),
+          isSafari: /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor),
+          isFirefox: /Firefox/.test(navigator.userAgent),
+          isIE: /Trident/.test(navigator.userAgent),
+          isEdge: /Edge/.test(navigator.userAgent),
+          version: (userAgent.match(/(?:Chrome|Firefox|Safari|Opera|Version)\/([\d.]+)/) || [])[1]
+        };
+
+        if (browser.version) {
+          browser.version = parseFloat(browser.version)
+        }
+
+        return browser
+      }
+
+      function showWarning(dom, browserInfo, tip) {
+        dom.innerHTML = '<p>'
+          + '您的浏览器版本为' + browserInfo.version + '，版本过低可能无法正常显示本站内容。'
+          + '</p>'
+          + '<p>'
+          + '请升级您的浏览器至本网站支持的最小版本及以上' + tip + '。'
+          + '</p>';
+        dom.style.display = 'block';
+      }
+
+      function checkBrowserVersion() {
+        var browserInfo = detectBrower();
+        var warningDom = document.getElementById('browser-warning');
+        var supportedBrowser = browserInfo.isChrome || browserInfo.isEdge;
+        if (!supportedBrowser) {
+          warningDom.innerHTML = '<p>'
+            + '为了更好地显示本站内容，请你使用高版本的Chrome或Edge浏览器打开'
+            + '</p>';
+          warningDom.style.display = 'block';
+          return
+        }
+
+        var isChrome = browserInfo.isChrome && browserInfo.version < 87;
+        var isEdge = browserInfo.isEdge && browserInfo.version < 92;
+        if (isChrome) {
+          showWarning(warningDom, browserInfo, 'Chrome>=87');
+          return
+        }
+        if (isEdge) {
+          showWarning(warningDom, browserInfo, 'Edge>=92');
+          return
+        }
+      }
+
+      window.onerror = () => {
+        checkBrowserVersion();
+      }
+    </script>
+    
+    <!-- 系统 -->
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

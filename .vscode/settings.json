@@ -1,0 +1,28 @@
+{
+  // prettier
+  "editor.tabSize": 2,
+  // "editor.formatOnSave": true, // 保存时自动格式化
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // eslint
+  "eslint.validate": [
+    "javascript",
+    {
+      "language": "vue",
+      "autoFix": true
+    }
+  ],
+  // 国际化
+  "i18n-ally.localesPaths": ["src/locales"],
+  // 控制相关文件嵌套展示
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "*.env": "$(capture).env.*",
+    ".eslintrc-auto-import.json": ".prettierignore,.prettierrc.cjs,eslint.config.js",
+    "package.json": "package-lock.json,pnpm-lock.yaml,LICENSE,.gitignore,README.md,node_modules.zip",
+    "index.html": "vite.config.ts,tsconfig.json,uno.config.ts"
+  }
+}

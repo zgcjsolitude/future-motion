@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+
+    /* Linting */
+    "strict": true,
+    "strictNullChecks": false, // null 和 undefined 可以赋值
+    "strictFunctionTypes": false,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true, 
+    "allowUnreachableCode": true, // 允许存在永远不会执行的代码
+    "noFallthroughCasesInSwitch": true, // 检测switch是否存在未break跳出的case
+    "noImplicitAny": false, // 允许any
+    "noUnusedLocals": false, // 允许未使用的变量
+    "noUnusedParameters": false, // 允许未使用的函数
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/types/auto-imports.d.ts",
+    "src/types/auto-components.d.ts",
+    "vite.config.ts",
+    "package.json"
+  ]
+}
