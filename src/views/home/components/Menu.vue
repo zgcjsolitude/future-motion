@@ -71,7 +71,7 @@ const clickMenu = (menu) => {
 
 .menu-item {
   color: #353c57;
-  font-size: 16px;
+  font-size: 18px;
   padding: 12px 20px;
   border-radius: 6px;
   cursor: pointer;

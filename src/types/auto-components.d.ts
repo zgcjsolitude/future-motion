@@ -13,6 +13,7 @@ declare module 'vue' {
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElInput: typeof import('element-plus/es')['ElInput']
+    ElLink: typeof import('element-plus/es')['ElLink']
     GlobalDialog: typeof import('./../components/global/Dialog/Dialog.vue')['default']
     GlobalEchart: typeof import('./../components/global/Echart/Echart.vue')['default']
     GlobalEchartSrcEchartPure: typeof import('./../components/global/Echart/src/EchartPure.vue')['default']
