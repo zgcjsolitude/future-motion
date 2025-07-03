@@ -73,6 +73,7 @@ const searchValue = ref('')
   right: 0;
   background-color: #fff;
   z-index: 999;
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.12);
 
   &.shadow {
     box-shadow: var(--el-box-shadow-lighter);
@@ -151,6 +152,6 @@ const searchValue = ref('')
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 20px;
+  padding: 0 25px;
 }
 </style>

@@ -7,6 +7,7 @@
         :class="['menu-item', menu.sign === activeMenuSign && 'is-active']"
         @click="clickMenu(menu)"
       >
+        <GlobalIcon :icon="menu.icon" size="22" class="mr-8px vertical-bottom" />
         <span>{{ menu.title }}</span>
       </div>
     </div>
@@ -20,26 +21,32 @@ const menuList = [
   {
     title: '最新智讯',
     sign: 'news',
+    icon: 'svg-icon:com-icon-001',
   },
   {
     title: '低空经济',
     sign: 'lowEconomy',
+    icon: 'svg-icon:com-icon-002',
   },
   {
     title: '安防监控',
     sign: 'monitoring',
+    icon: 'svg-icon:com-icon-003',
   },
   {
     title: '边缘计算',
     sign: 'edgeComputing',
+    icon: 'svg-icon:com-icon-004',
   },
   {
     title: '网络安全',
     sign: 'network',
+    icon: 'svg-icon:com-icon-005',
   },
   {
     title: '智能制造',
     sign: 'intelligent',
+    icon: 'svg-icon:com-icon-006',
   },
 ]
 

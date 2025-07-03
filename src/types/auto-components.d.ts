@@ -14,6 +14,8 @@ declare module 'vue' {
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElInput: typeof import('element-plus/es')['ElInput']
     ElLink: typeof import('element-plus/es')['ElLink']
+    ElOption: typeof import('element-plus/es')['ElOption']
+    ElSelect: typeof import('element-plus/es')['ElSelect']
     GlobalDialog: typeof import('./../components/global/Dialog/Dialog.vue')['default']
     GlobalEchart: typeof import('./../components/global/Echart/Echart.vue')['default']
     GlobalEchartSrcEchartPure: typeof import('./../components/global/Echart/src/EchartPure.vue')['default']

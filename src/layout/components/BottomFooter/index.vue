@@ -25,10 +25,22 @@
         <p class="m-4px">1700号4栋1单元4层407号附A10号（自编号）</p>
 
         <div class="flex flex-wrap w-500px mt-20px">
-          <div class="w-50% my-10px">021-610100000</div>
-          <div class="w-50% my-10px">021-610100000</div>
-          <div class="w-50% my-10px">Liuqiang@163.com</div>
-          <div class="w-50% my-10px">Liuqiang@163.com</div>
+          <div class="w-50% my-10px">
+            <GlobalIcon icon="svg-icon:com-icon-008" class="mr-10px vertical-bottom" />
+            <span>021-610100000</span>
+          </div>
+          <div class="w-50% my-10px">
+            <GlobalIcon icon="svg-icon:com-icon-008" class="mr-10px vertical-bottom" />
+            <span>021-610100000</span>
+          </div>
+          <div class="w-50% my-10px">
+            <GlobalIcon icon="svg-icon:com-icon-007" class="mr-10px vertical-bottom" />
+            <span>Liuqiang@163.com</span>
+          </div>
+          <div class="w-50% my-10px">
+            <GlobalIcon icon="svg-icon:com-icon-007" class="mr-10px vertical-bottom" />
+            <span>Liuqiang@163.com</span>
+          </div>
         </div>
       </div>
 
@@ -63,7 +75,8 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+</script>
 
 <style lang="scss" scoped>
 .contact-wrap {
