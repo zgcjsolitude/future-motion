@@ -57,7 +57,7 @@ const navList = [
   },
   {
     title: '关于我们',
-    path: '/aboutour',
+    path: '/about',
   },
 ]
 

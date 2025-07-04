@@ -2,7 +2,7 @@
   <div class="MenuNews">
     <div class="MenuNews-wrap flex">
       <div class="left-nav">
-        <div class="ml-auto w-408px">
+        <div class="ml-auto w-368px">
           <div class="text-24px font-bold mb-4px">案例展示</div>
           <div class="text-16px color-[#acbbfc]">Case Presentation</div>
           <div class="w-36px h-4px bg-[#fff] mt-10px rounded-2px"></div>

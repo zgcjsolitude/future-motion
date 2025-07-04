@@ -5,8 +5,8 @@
     <MenuVue @update-menu="(val) => (activeMenuSign = val)" />
 
     <!-- 子菜单内容区 -->
-    <MenuNews v-if="activeMenuSign === 'news'" />
-    <MenuBase v-else />
+    <MenuBase v-if="activeMenuSign === 'news'" />
+    <MenuNews v-else />
   </div>
 </template>
 

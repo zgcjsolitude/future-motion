@@ -51,7 +51,7 @@
                 <div class="flex">
                   <el-cascader
                     v-model="formModel.addressArea"
-                    :options="[]"
+                    :options="regionData"
                     class="w-360px!"
                     placeholder="请选择"
                   />
@@ -152,6 +152,8 @@
 </template>
 
 <script lang="ts" setup>
+import { regionData } from 'element-china-area-data'
+
 const formRef = ref()
 const formModel = ref({
   addressArea: '',

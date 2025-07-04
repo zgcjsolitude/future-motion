@@ -24,11 +24,15 @@ declare module 'vue' {
     ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup']
     ElRow: typeof import('element-plus/es')['ElRow']
     ElSelect: typeof import('element-plus/es')['ElSelect']
+    ElTextarea: typeof import('element-plus/es')['ElTextarea']
     GlobalDialog: typeof import('./../components/global/Dialog/Dialog.vue')['default']
     GlobalEchart: typeof import('./../components/global/Echart/Echart.vue')['default']
     GlobalEchartSrcEchartPure: typeof import('./../components/global/Echart/src/EchartPure.vue')['default']
     GlobalIcon: typeof import('./../components/global/Icon/Icon.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+  }
+  export interface ComponentCustomProperties {
+    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }

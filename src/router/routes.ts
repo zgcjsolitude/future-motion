@@ -28,6 +28,30 @@ export const remainingRouter: any[] = [
           title: '产品详情'
         }
       },
+      {
+        path: 'contact',
+        component: () => import('@/views/contact/index.vue'),
+        name: 'ContactIndex',
+        meta: {
+          title: '联系我们'
+        }
+      },
+      {
+        path: 'support',
+        component: () => import('@/views/support/index.vue'),
+        name: 'SupportIndex',
+        meta: {
+          title: '支持与服务'
+        }
+      },
+      {
+        path: 'about',
+        component: () => import('@/views/about/index.vue'),
+        name: 'AboutIndex',
+        meta: {
+          title: '关于我们'
+        }
+      },
     ]
   },
   { path: '/404', component: () => import('@/views/404.vue') },

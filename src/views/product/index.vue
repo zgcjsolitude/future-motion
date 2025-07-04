@@ -1,13 +1,9 @@
 <template>
   <div class="product">
     <div class="search-input">
-      <el-input
-        v-model="searchValue"
-        size="large"
-        placeholder="请输入"
-      >
+      <el-input v-model="searchValue" @keyup.enter="getProductList" size="large" placeholder="请输入">
         <template #append>
-          搜索
+          <span @click="getProductList">搜索</span>
         </template>
       </el-input>
     </div>
@@ -18,20 +14,31 @@
           v-for="item in tabList"
           :key="item.label"
           :class="['tab-item', item.label === tabValue && 'is-active']"
-          @click="tabValue = item.label"
+          @click="tabValue = item.label;getProductList()"
         >
           {{ item.label }}
         </div>
       </div>
 
-      <div class="product-container">
-        <div v-for="(item, i) in productList" :key="i" class="product-item" @click="router.push('/productview/001')">
-          <div class="w-full h-260px bg-[#f6f7f9] flex justify-center items-center">
-            <img :src="item.imgUrl" alt="">
+      <div class="product-container" v-loading="loading">
+        <div
+          v-for="(item, i) in productList"
+          :key="i"
+          class="product-item"
+          @click="router.push('/productview/001')"
+        >
+          <div
+            class="w-full h-260px bg-[#f6f7f9] flex justify-center items-center"
+          >
+            <img :src="item.imgUrl" alt="" />
           </div>
           <div class="py-10px px-30px">
-            <p class="h-50px text-16px color-[#333333] line-height-7">{{ item.name }}</p>
-            <p class="h-42px text-12px color-[#919191] line-height-6">{{ item.desc }}</p>
+            <p class="h-50px text-16px color-[#333333] line-height-7">
+              {{ item.name }}
+            </p>
+            <p class="h-42px text-12px color-[#919191] line-height-6">
+              {{ item.desc }}
+            </p>
           </div>
           <div class="color-[var(--el-color-danger)] px-30px">
             <span class="text-16px mr-4px">￥</span>
@@ -48,6 +55,8 @@
 </template>
 
 <script lang="ts" setup>
+import { service } from '@/configs/axios'
+
 const router = useRouter()
 
 const searchValue = ref('')
@@ -74,80 +83,118 @@ const tabList = [
   },
 ]
 
-const productList = [
-  {
-    imgUrl: '/imgs/product/product-01.png',
-    name: 'AI边缘计算盒子多路视频算法分析校 园加油站工地社区智能安防监控',
-    desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
-    price: '999',
-  },
-  {
-    imgUrl: '/imgs/product/product-02.png',
-    name: 'AI边缘计算盒子多路视频算法分析校 园加油站工地社区智能安防监控',
-    desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
-    price: '999',
-  },
-  {
-    imgUrl: '/imgs/product/product-01.png',
-    name: 'AI边缘计算盒子多路视频算法分析校 园加油站工地社区智能安防监控',
-    desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
-    price: '999',
-  },
-  {
-    imgUrl: '/imgs/product/product-01.png',
-    name: 'AI边缘计算盒子多路视频算法分析校 园加油站工地社区智能安防监控',
-    desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
-    price: '999',
-  },
-  {
-    imgUrl: '/imgs/product/product-03.png',
-    name: 'Smart3000 4/5G人工智能盒集成 ',
-    desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
-    price: '999',
-  },
-  {
-    imgUrl: '/imgs/product/product-04.png',
-    name: 'nvr录像机',
-    desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
-    price: '999',
-  },
-  {
-    imgUrl: '/imgs/product/product-01.png',
-    name: 'AI边缘计算盒子多路视频算法分析校 园加油站工地社区智能安防监控',
-    desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
-    price: '999',
-  },
-  {
-    imgUrl: '/imgs/product/product-01.png',
-    name: 'AI边缘计算盒子多路视频算法分析校 园加油站工地社区智能安防监控',
-    desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
-    price: '999',
-  },
-  {
-    imgUrl: '/imgs/product/product-03.png',
-    name: 'Smart3000 4/5G人工智能盒集成 ',
-    desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
-    price: '999',
-  },
-  {
-    imgUrl: '/imgs/product/product-04.png',
-    name: 'nvr录像机',
-    desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
-    price: '999',
-  },
-  {
-    imgUrl: '/imgs/product/product-01.png',
-    name: 'AI边缘计算盒子多路视频算法分析校 园加油站工地社区智能安防监控',
-    desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
-    price: '999',
-  },
-  {
-    imgUrl: '/imgs/product/product-01.png',
-    name: 'AI边缘计算盒子多路视频算法分析校 园加油站工地社区智能安防监控',
-    desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
-    price: '999',
-  },
-]
+const productList = ref([])
+
+const loading = ref(false)
+const getProductList = async () => {
+  try {
+    loading.value = true
+    productList.value = []
+
+    // GET
+    // const res = await service({
+    //   url: '/api/xxx',
+    //   method: 'GET',
+    //   params: {
+    //     keyword: searchValue.value,
+    //     classify: tabValue.value,
+    //   },
+    // });
+    // POST
+    // const res = await service({
+    //   url: '/api/xxx',
+    //   method: 'POST',
+    //   params: {
+    //     keyword: searchValue.value,
+    //     classify: tabValue.value,
+    //   },
+    // });
+    
+    setTimeout(() => {
+      productList.value = [
+        {
+          imgUrl: '/imgs/product/product-01.png',
+          name: 'AI边缘计算盒子多路视频算法分析校 园加油站工地社区智能安防监控',
+          desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
+          price: '999',
+        },
+        {
+          imgUrl: '/imgs/product/product-02.png',
+          name: 'AI边缘计算盒子多路视频算法分析校 园加油站工地社区智能安防监控',
+          desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
+          price: '999',
+        },
+        {
+          imgUrl: '/imgs/product/product-01.png',
+          name: 'AI边缘计算盒子多路视频算法分析校 园加油站工地社区智能安防监控',
+          desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
+          price: '999',
+        },
+        {
+          imgUrl: '/imgs/product/product-01.png',
+          name: 'AI边缘计算盒子多路视频算法分析校 园加油站工地社区智能安防监控',
+          desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
+          price: '999',
+        },
+        {
+          imgUrl: '/imgs/product/product-03.png',
+          name: 'Smart3000 4/5G人工智能盒集成 ',
+          desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
+          price: '999',
+        },
+        {
+          imgUrl: '/imgs/product/product-04.png',
+          name: 'nvr录像机',
+          desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
+          price: '999',
+        },
+        {
+          imgUrl: '/imgs/product/product-01.png',
+          name: 'AI边缘计算盒子多路视频算法分析校 园加油站工地社区智能安防监控',
+          desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
+          price: '999',
+        },
+        {
+          imgUrl: '/imgs/product/product-01.png',
+          name: 'AI边缘计算盒子多路视频算法分析校 园加油站工地社区智能安防监控',
+          desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
+          price: '999',
+        },
+        {
+          imgUrl: '/imgs/product/product-03.png',
+          name: 'Smart3000 4/5G人工智能盒集成 ',
+          desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
+          price: '999',
+        },
+        {
+          imgUrl: '/imgs/product/product-04.png',
+          name: 'nvr录像机',
+          desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
+          price: '999',
+        },
+        {
+          imgUrl: '/imgs/product/product-01.png',
+          name: 'AI边缘计算盒子多路视频算法分析校 园加油站工地社区智能安防监控',
+          desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
+          price: '999',
+        },
+        {
+          imgUrl: '/imgs/product/product-01.png',
+          name: 'AI边缘计算盒子多路视频算法分析校 园加油站工地社区智能安防监控',
+          desc: 'Arm 8核2.4 /8GB/64GB/Arm G52 /6.0 Tops/2*网口,1*Hdmi,12V电源,音频输... ',
+          price: '999',
+        },
+      ]
+      loading.value = false
+    }, 1000)
+  } finally {
+    // loading.value = false
+  }
+}
+
+onMounted(() => {
+  getProductList()
+})
 </script>
 
 <style lang="scss" scoped>
@@ -169,7 +216,8 @@ const productList = [
 
     width: 750px;
 
-    .el-input-group__append, .el-input-group__prepend {
+    .el-input-group__append,
+    .el-input-group__prepend {
       color: #fff;
       background-color: var(--el-color-danger);
       cursor: pointer;
@@ -179,6 +227,7 @@ const productList = [
 
 .conetnt-container {
   width: var(--sys-body-width);
+  min-height: 400px;
   margin: 0 auto;
 }
 
@@ -243,5 +292,9 @@ const productList = [
     opacity: 0;
     margin-bottom: 0;
   }
+}
+
+:deep(.el-loading-mask) {
+  min-height: 300px;
 }
 </style>

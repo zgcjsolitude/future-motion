@@ -52,13 +52,13 @@ const menuList = [
 
 const activeMenuSign = ref('')
 const clickMenu = (menu) => {
-  if (activeMenuSign.value === menu.sign) {
-    activeMenuSign.value = ''
-  } else {
-    activeMenuSign.value = menu.sign
-  }
+  activeMenuSign.value = menu.sign
   emits('updateMenu', activeMenuSign.value)
 }
+
+onMounted(() => {
+  clickMenu(menuList[0])
+})
 </script>
 
 <style lang="scss" scoped>
