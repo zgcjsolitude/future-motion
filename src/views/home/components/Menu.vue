@@ -71,7 +71,7 @@ const clickMenu = (menu) => {
 }
 
 .menu-container {
-  width: var(--sys-top-body-width);
+  width: var(--sys-body-width);
   height: 100%;
   margin: 0 auto;
 }

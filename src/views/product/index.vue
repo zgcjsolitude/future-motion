@@ -178,7 +178,7 @@ const productList = [
 }
 
 .conetnt-container {
-  width: var(--sys-top-body-width);
+  width: var(--sys-body-width);
   margin: 0 auto;
 }
 

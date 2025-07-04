@@ -66,7 +66,7 @@ const searchValue = ref('')
 
 <style lang="scss" scoped>
 .TopHeader {
-  height: var(--sys-top-header-height);
+  height: var(--sys-header-height);
   position: fixed;
   top: 0;
   left: 0;

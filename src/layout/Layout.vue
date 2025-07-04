@@ -1,5 +1,5 @@
 <template>
-  <div class="relative h-[100%] w-[100%] pt-[var(--sys-top-header-height)]">
+  <div class="relative h-[100%] w-[100%] pt-[var(--sys-header-height)]">
     <TopHeader />
 
     <router-view>

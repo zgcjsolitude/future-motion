@@ -86,7 +86,7 @@
 }
 
 .contact-container {
-  width: var(--sys-top-body-width);
+  width: var(--sys-body-width);
   margin: auto;
 }
 
@@ -105,14 +105,14 @@
 }
 
 .company-info {
-  width: var(--sys-top-body-width);
+  width: var(--sys-body-width);
   margin: auto;
   color: #4a4c5e;
   padding-top: 60px;
 }
 
 .copyright {
-  width: var(--sys-top-body-width);
+  width: var(--sys-body-width);
   margin: auto;
   text-align: center;
   color: #4a4c5e;

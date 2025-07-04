@@ -84,13 +84,13 @@ const router = useRouter()
 
   .banner-content-full {
     width: 100%;
-    max-width: var(--sys-top-body-design-width);
+    max-width: var(--sys-body-design-width);
     margin: auto;
     padding: 0 60px;
   }
 
   .banner-content-body {
-    width: var(--sys-top-body-width);
+    width: var(--sys-body-width);
     padding: 0 20px;
     margin: auto;
   }

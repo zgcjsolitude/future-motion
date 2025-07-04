@@ -199,7 +199,7 @@ const partner = [
 
 <style lang="scss" scoped>
 .MenuBase-container {
-  width: var(--sys-top-body-width);
+  width: var(--sys-body-width);
   margin: 0 auto;
   overflow: auto;
 }
