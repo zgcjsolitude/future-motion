@@ -22,6 +22,9 @@ import { setupElementPlus } from '@/plugins/element-plus'
 // 全局组件
 import { setupGlobCom } from '@/components'
 
+// 初始化多语言
+import { setupI18n } from '@/plugins/vueI18n'
+
 // 注册自定义指令
 import { setupDirectives } from '@/directives/index'
 
@@ -38,6 +41,8 @@ async function setupAll() {
   setupElementPlus(app)
 
   setupGlobCom(app)
+
+  setupI18n(app)
 
   setupDirectives(app)
 

@@ -17,7 +17,7 @@
       </div>
 
       <div class="search-container">
-        <el-input v-model="searchValue" placeholder="输入关键字">
+        <el-input v-model="searchValue" :placeholder="t('layout.searchPlaceholder')">
           <template #prefix>
             <GlobalIcon icon="ep:search" />
           </template>
@@ -25,8 +25,12 @@
       </div>
 
       <div class="ask-container">
-        <p class="my-2px">售前咨询：</p>
+        <p class="my-2px">{{ t('layout.consultation') }}：</p>
         <p class="my-2px">400-098-0090</p>
+      </div>
+
+      <div class="h-full">
+        <LocaleDropdown />
       </div>
     </div>
   </div>
@@ -34,29 +38,31 @@
 
 <script lang="ts" setup>
 import LogoComp from '../Logo/index.vue'
+import LocaleDropdown from '../LocaleDropdown/index.vue'
 
 const router = useRouter()
 const route = useRoute()
+const { t } = useI18n() // 国际化
 
 const navList = [
   {
-    title: '首页',
+    title: t('route.home'),
     path: '/home',
   },
   {
-    title: '产品展示',
+    title: t('route.product'),
     path: '/product',
   },
   {
-    title: '联系我们',
+    title: t('route.contact'),
     path: '/contact',
   },
   {
-    title: '支持与服务',
+    title: t('route.support'),
     path: '/support',
   },
   {
-    title: '关于我们',
+    title: t('route.about'),
     path: '/about',
   },
 ]

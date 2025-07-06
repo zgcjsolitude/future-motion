@@ -17,9 +17,11 @@
 <script lang="ts" setup>
 const emits = defineEmits(['updateMenu'])
 
+const { t } = useI18n() // 国际化
+
 const menuList = [
   {
-    title: '最新智讯',
+    title: t('home.latestNews'),
     sign: 'news',
     icon: 'svg-icon:com-icon-001',
   },

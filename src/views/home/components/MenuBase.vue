@@ -48,7 +48,7 @@
         </div>
 
         <div class="text-center mt-30px">
-          <el-button type="primary" plain size="large">查看更多</el-button>
+          <el-button type="primary" plain size="large">{{ t('operate.seeMore') }}</el-button>
         </div>
       </div>
     </div>
@@ -84,6 +84,8 @@
 </template>
 
 <script lang="ts" setup>
+const { t } = useI18n() // 国际化
+
 const business = [
   {
     title: '解决方案',

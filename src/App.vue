@@ -1,11 +1,16 @@
 <template>
-  <el-config-provider :locale="zhCn">
+  <el-config-provider :locale="elLocaleMap[currentLocale.lang]">
     <router-view />
   </el-config-provider>
 </template>
 
 <script lang="ts" setup>
-import zhCn from 'element-plus/es/locale/lang/zh-cn'
+import { elLocaleMap } from '@/plugins/element-plus'
+import { useLocaleStore } from '@/store/modules/locale'
+
+const localeStore = useLocaleStore()
+
+const currentLocale = computed(() => localeStore.currentLocale)
 </script>
 
 <style lang="scss" scoped>

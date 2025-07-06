@@ -25,7 +25,8 @@ router.beforeEach(async (to, from, next) => {
 
 router.afterEach((to) => {
   if (to?.meta?.title) {
-    docTitle.value = to?.meta?.title ? `${appStore.title}|${to?.meta?.title}` : appStore.title
+    const { t } = useI18n() // 国际化
+    docTitle.value = to?.meta?.title ? `${appStore.title}|${t(to?.meta?.title)}` : appStore.title
   }
   done()
 })

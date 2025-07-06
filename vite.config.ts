@@ -11,6 +11,7 @@ import { ViteEjsPlugin } from 'vite-plugin-ejs'
 import EslintPlugin from 'vite-plugin-eslint'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import viteCompression from 'vite-plugin-compression'
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 
 // 当前执行node命令时文件夹的地址(工作目录)
 // const root = process.cwd()
@@ -46,6 +47,7 @@ export default defineConfig({
         'vue-router',
         // 可额外添加需要 autoImport 的组件
         {
+          '@/hooks/useI18n': ['useI18n'],
           '@/hooks/useIcon': ['useIcon'],
           '@/hooks/useMessage': ['useMessage'],
         }
@@ -80,6 +82,11 @@ export default defineConfig({
       deleteOriginFile: false //压缩后是否删除源文件
     }),
     ViteEjsPlugin(),
+    VueI18nPlugin({
+      runtimeOnly: true,
+      compositionOnly: true,
+      include: [path.resolve(__dirname, 'src/locales/**')]
+    }),
     EslintPlugin({
       cache: false,
       include: ['src/**/*.vue', 'src/**/*.ts', 'src/**/*.tsx'] // 检查的文件

@@ -18,11 +18,10 @@
 
     <div class="company-info flex">
       <div :style="{ flex: 2 }" class="pl-50px">
-        <h3 class="text-20px mb-40px">联系我们</h3>
+        <h3 class="text-20px mb-40px">{{ t('layout.contactUs') }}</h3>
 
         <p class="mb-20px">四川积木智集科技有限公司</p>
-        <p class="m-4px">中国（四川）自由贸易试验区成都高新区天府大道北段</p>
-        <p class="m-4px">1700号4栋1单元4层407号附A10号（自编号）</p>
+        <p class="w-360px line-height-6">{{ t('layout.address') }}</p>
 
         <div class="flex flex-wrap w-500px mt-20px">
           <div class="w-50% my-10px">
@@ -45,12 +44,12 @@
       </div>
 
       <div class="flex-1">
-        <h3 class="text-20px mb-40px">快捷导航</h3>
+        <h3 class="text-20px mb-40px">{{ t('layout.quickNavigation') }}</h3>
         <div class="flex">
           <div class="w-160px">
-            <div class="mb-30px">产品展示</div>
-            <div class="mb-30px">支持与服务</div>
-            <div class="mb-30px">关于我们</div>
+            <div class="mb-30px">{{ t('route.product') }}</div>
+            <div class="mb-30px">{{ t('route.support') }}</div>
+            <div class="mb-30px">{{ t('route.about') }}</div>
             <div class="mb-30px">合作伙伴</div>
           </div>
 
@@ -61,7 +60,7 @@
       </div>
 
       <div class="flex-1 pl-50px">
-        <h3 class="text-20px mb-40px">关于我们</h3>
+        <h3 class="text-20px mb-40px">{{ t('route.about') }}</h3>
         <div>
           <img src="/imgs/home/qrcode.png" alt="" />
           <div class="mt-30px">扫一扫 关注我们</div>
@@ -76,6 +75,7 @@
 </template>
 
 <script lang="ts" setup>
+const { t } = useI18n() // 国际化
 </script>
 
 <style lang="scss" scoped>

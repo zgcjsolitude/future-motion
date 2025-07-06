@@ -22,6 +22,7 @@ export default [
       'no-useless-escape': 'off',
       'no-self-assign': 'off',
       'no-empty': 'off',
+      'no-debugger': 'off',
     }
   },
 

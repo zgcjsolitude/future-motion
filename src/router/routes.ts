@@ -9,7 +9,7 @@ export const remainingRouter: any[] = [
         component: () => import('@/views/home/index.vue'),
         name: 'HomeIndex',
         meta: {
-          title: '首页'
+          title: 'route.home',
         }
       },
       {
@@ -17,7 +17,7 @@ export const remainingRouter: any[] = [
         component: () => import('@/views/product/index.vue'),
         name: 'ProductIndex',
         meta: {
-          title: '产品展示'
+          title: 'route.product',
         }
       },
       {
@@ -25,7 +25,7 @@ export const remainingRouter: any[] = [
         component: () => import('@/views/product/detail.vue'),
         name: 'ProductViewIndex',
         meta: {
-          title: '产品详情'
+          title: 'route.productview',
         }
       },
       {
@@ -33,7 +33,7 @@ export const remainingRouter: any[] = [
         component: () => import('@/views/contact/index.vue'),
         name: 'ContactIndex',
         meta: {
-          title: '联系我们'
+          title: 'route.contact',
         }
       },
       {
@@ -41,7 +41,7 @@ export const remainingRouter: any[] = [
         component: () => import('@/views/support/index.vue'),
         name: 'SupportIndex',
         meta: {
-          title: '支持与服务'
+          title: 'route.support',
         }
       },
       {
@@ -49,7 +49,7 @@ export const remainingRouter: any[] = [
         component: () => import('@/views/about/index.vue'),
         name: 'AboutIndex',
         meta: {
-          title: '关于我们'
+          title: 'route.about',
         }
       },
     ]

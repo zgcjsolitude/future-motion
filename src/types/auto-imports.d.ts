@@ -59,7 +59,7 @@ declare global {
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
   const useDialogHook: typeof import('@/hooks/state/useDialogHook')['useDialogHook']
-  const useI18n: typeof import('@/hooks/tools/useI18n')['useI18n']
+  const useI18n: typeof import('@/hooks/useI18n')['useI18n']
   const useIcon: typeof import('@/hooks/useIcon')['useIcon']
   const useId: typeof import('vue')['useId']
   const useLink: typeof import('vue-router')['useLink']
