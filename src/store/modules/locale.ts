@@ -36,6 +36,7 @@ export const useLocaleStore = defineStore('locales', {
     setCurrentLocale(lang: LocaleType) {
       window.location.reload()
       this.currentLocale.lang = lang
+      this.currentLocale.name = defaultLocaleMap[lang]
       setI18nLanguage(lang)
     }
   }
